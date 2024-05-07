@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lego Collection</title>
+    <link rel="stylesheet" href="/css/main.css" />
+  </head>
+  <body>
+    <%- include('partials/navbar', {page:'/home'}) %>
+    <div class="container mx-auto">
+      <div class="hero min-h-screen bg-base-200">
+        <div class="hero-content text-center">
+          <div class="max-w-md">
+            <h1 class="text-5xl font-bold">WELCOME</h1>
+            <p class="py-6">Explore all of the Lego sets, rebuild the world!</p>
+            <a href="/lego/sets/?theme=Super%20Mario">
+              <button class="btn btn-primary">Super Mario</button>
+            </a>
+            <a href="/lego/sets/?theme=Classic%20Town">
+              <button class="btn btn-primary">Classic Town</button>
+            </a>
+            <a href="/lego/sets/?theme=Lion&Knights">
+              <button class="btn btn-primary">Lion Knights</button>
+            </a>
+            <a href="/lego/sets/?theme=Supplemental">
+              <button class="btn btn-primary">Supplemental</button>
+            </a>
+          </div>
+        </div>
+      </div>
+      <br />
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div>
+          <div class="card bg-base-100 shadow-xl flex flex-col p-4 h-[600px]">
+            <figure>
+              <img
+                class="h-[220px]"
+                src="https://cdn.rebrickable.com/media/sets/71368-1.jpg"
+                alt="Toad Village"
+              />
+            </figure>
+            <div class="card-body flex flex-col mb-4">
+              <h2 class="card-title">Toad's Treasure Hunt Expansion Set</h2>
+              <p>Defeat enemies in Toad Village and save everyone Mario!</p>
+              <div class="card-actions justify-end">
+                <div class="badge badge-outline">Super Mario</div>
+                <div class="badge badge-outline">Expansion</div>
+              </div>
+              <div class="card-actions justify-end">
+                <a href="/lego/sets/71368-1">
+                <button class="btn btn-primary">
+                  View
+                </button>
+              </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="card bg-base-100 shadow-xl flex flex-col p-4 h-[600px]">
+            <figure>
+              <img
+                class="h-[220px]"
+                src="https://cdn.rebrickable.com/media/sets/71377-1.jpg"
+                alt="King Boo Mansion"
+              />
+            </figure>
+            <div class="card-body flex flex-col mb-4">
+              <h2 class="card-title">
+                King Boo and the Haunted Yard Expansion Set
+                <div class="badge badge-secondary flex flex-col">NEW</div>
+              </h2>
+              <p>
+                Collect coins and power ups! Use the Super Star to defeat King
+                Boo!
+              </p>
+              <div class="card-actions justify-end">
+                <div class="badge badge-outline">Super Mario</div>
+                <div class="badge badge-outline">Expansion</div>
+              </div>
+              <div class="card-actions justify-end">
+                <a href="/lego/sets/71377-1">
+                <button class="btn btn-primary">
+                  View
+                </button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="card h-150 bg-base-100 shadow-xl p-4 h-[600px]">
+            <figure>
+              <img
+                class="h-[220px]"
+                src="https://cdn.rebrickable.com/media/sets/71382-1.jpg"
+                alt="Piranha Plant"
+              />
+            </figure>
+            <div class="card-body h-50">
+              <h2 class="card-title">
+                Piranha Plant Puzzling Challenge Expansion Set
+                <div class="badge badge-secondary">NEW</div>
+              </h2>
+              <p>
+                Cross the poisonous Soda Jungle, avoid or defeat the Piranha
+                Plants and Spiny!
+              </p>
+              <div class="card-actions justify-end">
+                <div class="badge badge-outline">Super Mario</div>
+                <div class="badge badge-outline">Expansion</div>
+              </div>
+              <div class="card-actions justify-end">
+                <a href="/lego/sets/71382-1">
+                <button class="btn btn-primary">
+                  View
+                </button>
+              </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

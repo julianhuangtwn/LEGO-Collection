@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sets</title>
+    <link rel="stylesheet" href="/css/main.css" />
+</head>
+<body>
+    <%- include('partials/navbar', {page: '/sets'}) %>
+    <hr style="border-color: #b1961f">
+    <h1 class="text-5xl font-bold">Lego Collection</h1>
+    <br >
+    <a href="#" onclick="history.back()"><button class="btn"><- Back</button></a>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <% legoSets.forEach(lego => { %>
+            <div class="hero min-h-screen bg-base-200">
+                <div class="hero-content">
+                    <div class="max-w-md">
+                        <br>
+                        <br>
+                            
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td><img src="<%= lego.img_url %>" alt="lego image"></td>
+                                    </tr>
+                                </tbody>
+                                <tfoot class="text">
+                                <tr><td><strong>Set name: </strong><%= lego.name %></td></tr>
+                                <tr><td><strong>Theme: </strong><a href="/lego/sets/?theme=<%=lego.Theme.name%>"><button class="btn"><%= lego.Theme.name %></button></a></td></tr>
+                                <tr><td><strong>Year: </strong><%= lego.year %></td></tr>
+                                <tr><td><strong>Number of Parts: </strong><%= lego.num_parts %></td><br></tr>
+                                <tr><td><a href="/lego/sets/<%=lego.set_num%>"><button class="btn">Details</button></a></td></tr>
+                                </tfoot>
+                            </table>
+                        <br>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+</body>
+</html>

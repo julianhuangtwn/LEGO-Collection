@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set</title>
+    <link rel="stylesheet" href="/css/main.css" />
+</head>
+<body>
+  <%- include('partials/navbar', {page: ""}) %>
+      <div class="container mx-auto">
+        <div class="hero min-h-screen bg-base-200">
+            <div class="hero-content flex-col lg:flex-row">
+              <div>
+                <a href="#" onclick="history.back()"><button class="btn"><- Back</button></a>
+                <h1 class="text-5xl font-bold"><%=set.name%> </h1>
+                <br>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-2">
+                    <div><img src="<%=set.img_url%>" class="max-w-sm rounded-lg shadow-2xl" /></div>
+                    <div>
+                        <p class="py-6">
+                            <strong>Year: </strong><%= set.year%> <br>
+                            <strong>Theme: </strong><%= set.Theme.name%> <br>
+                            <strong>Number of Parts: </strong><%= set.num_parts%>
+                            <p id="quote"></p>
+                        </p>
+                    </div>
+                    <%if (session.user){%>
+                        <a href="/lego/editSet/<%=set.set_num%>"><button class="btn">Edit</button></a>
+                    <%}%>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+      <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            //fetch returns a promise from the API
+            fetch('https://api.quotable.io/random')
+            //response is processed into JSON
+            .then(response => response.json())
+            //.json() returns a promise with the quote JSON
+            //Viewable when API link is accessed
+            .then(quoteData => {
+                const quoteTag = document.getElementById('quote');
+                quoteTag.innerHTML = `<p>"${quoteData.content}"</p><p>- ${quoteData.author}</p>`;
+            })
+            .catch(error => {
+                console.error('Error fetching quote API:', error);
+            });    
+        });
+    </script>
+
+</body>
+
+</html>

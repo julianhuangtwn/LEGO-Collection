@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <link rel="stylesheet" href="/css/main.css" />
+  </head>
+  <body>
+    <%- include('partials/navbar', {page:'/register'}) %>
+    <div class="hero min-h-screen bg-base-200">
+        <div class="hero-content text-center">
+          <div class="max-w-md">
+            <h1 class="text-5xl font-bold">Register</h1>
+            <p class="py-6">Please provide your credentials below</p>
+          </div>
+        </div>
+      </div>
+    <%if (typeof successMessage === 'undefined'){%>
+        <br />
+        <form class="max-w-sm mx-auto" method="POST" action="/register">
+            <div class="mb-5">
+                <label for="username" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">User Name</label>
+                <input type="text" name="username" placeholder="User Name" value="<%= typeof userName !== 'undefined' ? userName : ''%>" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 " required />
+            </div>
+            <div class="mb-5">
+                <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
+                <input type="password" name="password" placeholder="Password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5" required />
+            </div>  
+            <div class="mb-5">
+              <label for="password2" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Confirm Password</label>
+              <input type="password" name="password2" placeholder="Confirm Password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5" required />
+          </div>  
+          <div class="mb-5">
+            <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email Address</label>
+            <input type="email" name="email" placeholder="Email Address" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5" required />
+          </div>  
+            <button type="submit" style="background-color: #e3000b;" class="text-white hover:bg-red-800 focus:ring-4 focus:outline-none rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center ">Register</button>
+        </form>
+        <br />
+    <%} else {%>
+        <div class="alert">
+            <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            <span><%= successMessage %></span>
+        </div><br />
+            <a href="/login" class="btn btn-success">
+            Proceed to Log in
+            </a>
+    <%}%>
+    <%if (typeof errorMessage !== 'undefined' && errorMessage){%>
+        <div class="alert alert-error">  
+        <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+        <span><%= errorMessage %></span>
+        </div>
+    <%}%>
+    </body>
+</html>

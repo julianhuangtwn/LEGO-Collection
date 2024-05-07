@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="/css/main.css" />
+</head>
+<body>
+  <%- include('partials/navbar', {page: '/about'}) %>
+      <div class="container mx-auto">
+        <div class="hero min-h-screen bg-base-200">
+            <div class="hero-content flex-col lg:flex-row">
+              <div>
+                <h1 class="text-5xl font-bold">About</h1>
+                <br>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-2">
+                    <div><img src="/img/nes.jpg" class="max-w-sm rounded-lg shadow-2xl" /></div>
+                    <div>
+                      <p class="py-6">This is where some Lego sets are displayed. Filter by theme, or click on specific sets to see their details!</p>
+                      <p>Register and login to add new sets to the collection, or edit/delete existing ones.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+      </div>
+
+</body>
+</html>
